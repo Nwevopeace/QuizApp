@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">Quiz App</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="question1"><b>Q1:</b> All except one is NOT a data type in kotlin programming language?</string>
+    <string name="a_boolean">A. Flowchart</string>
+    <string name="b_array">B. Array</string>
+    <string name="c_flowchart">C. Boolean</string>
+    <string name="d_number">D. Number</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="time_10sec">Time:10sec</string>
+    <string name="_1_3">1/3</string>
+    <string name="score_00">Score:00</string>
+    <string name="logo">logo</string>
+    <string name="_2_3">2/3</string>
+    <string name="question2"><b>Q2.</b> What is the full meaning of MVVM in Kotlin Programming language</string>
+    <string name="a_model_view_view_model">A. Model View ViewModel</string>
+    <string name="b_model_view_model_view">B. Model ViewModel View</string>
+    <string name="c_mode_view_view_model">C. Mode View ViewModel</string>
+    <string name="_3_3">3/3</string>
+    <string name="question3"><b>Q3.</b> One of the following is NOT a mobile programming language?</string>
+    <string name="a_java">A. Javascript</string>
+    <string name="c_flutter">C. Flutter</string>
+    <string name="d_javascript">D. Java</string>
+    <string name="b_kotlin">B. Kotlin</string>
+    <string name="d_mode_view_model_view">D. Mode ViewModel View</string>
+    <string name="instruction">You\'re welcome to QuizApp, this application will help you test your skill in kotlin programming language. You are expected to answer all the questions correctly.</string>
+
+
+    <string name="game_over">Game Over</string>
+    <string name="try_again">Try Again?</string>
+    <string name="position">Position</string>
+    <string name="select_an_avatar">Select an Avatar</string>
+    <string name="android_trivia">Android Trivia</string>
+    <string name="about_text">Android Trivia will help remind you of important concepts you have learned and will learn in Android development.\n\nConsider modifying the questions and graphics to make this game your own!</string>
+    <string name="rules_text">Select the answer from the options given. Each time you get an answer correct, you advance to the next question.\n\nIf you get the answer wrong, your game ends! You can return to the title screen using up or back from within the game screen, and this will also end your game.</string>
+    <string name="rules">Rules</string>
+    <string name="about">About</string>
+    <string name="trivia_hint">Trivia Hint</string>
+    <string name="title_android_trivia_question">Android Trivia (%1$d/%2$d)</string>
+    <string name="title_about_trivia">About Trivia</string>
+    <string name="title_trivia_rules">Trivia Rules</string>
+    <string name="share_success_text">I mastered #UdacityAndroidTrivia with %1$d/%2$d correct questions!</string>
+    <string name="submit_button">Submit</string>
+    <string name="congratulations">Congratulations!</string>
+    <string name="share">Share</string>
+    <string name="sharing_not_available">Sharing Not Available</string>
+</resources>

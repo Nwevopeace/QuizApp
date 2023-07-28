@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:padding="16dp"
+    tools:context=".PlayActivity">
+
+    <ImageView
+        android:id="@+id/logo_img"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="50dp"
+        android:contentDescription="@string/logo"
+        android:src="@drawable/logo_black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_play_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Score - 00"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:fontFamily="@font/poppin_regular"
+        app:layout_constraintStart_toStartOf="@id/logo_img"
+        app:layout_constraintTop_toBottomOf="@+id/logo_img" />
+    <TextView
+        android:id="@+id/tv_noOfQues"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_1_3"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppin_regular"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo_img" />
+    <TextView
+        android:id="@+id/quiz_timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Time - 00"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/poppin_bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_play_score" />
+    <TextView
+        android:id="@+id/tv_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/question1"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:fontFamily="@font/poppin_regular"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quiz_timer" />
+    <RadioGroup
+        android:id="@+id/radiogrp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/logo_img"
+        app:layout_constraintTop_toBottomOf="@id/tv_question"
+        app:layout_constraintEnd_toEndOf="@id/logo_img"
+        android:layout_marginTop="40dp">
+
+        <RadioButton
+            android:id="@+id/radioButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/a_boolean"
+            app:layout_constraintStart_toStartOf="@id/logo_img"
+            app:layout_constraintTop_toBottomOf="@id/tv_question"
+            app:layout_constraintBottom_toTopOf="@id/radioButton2"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppin_regular"
+            android:textColor="@color/black" />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/b_array"
+            app:layout_constraintStart_toStartOf="@id/logo_img"
+            app:layout_constraintTop_toBottomOf="@id/radioButton1"
+            app:layout_constraintBottom_toTopOf="@id/radioButton3"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppin_regular"
+            android:textColor="@color/black"
+            android:layout_marginTop="5dp"/>
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/c_flowchart"
+            app:layout_constraintStart_toStartOf="@id/logo_img"
+            app:layout_constraintTop_toBottomOf="@id/radioButton2"
+            app:layout_constraintBottom_toTopOf="@id/radioButton4"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppin_regular"
+            android:textColor="@color/black"
+            android:layout_marginTop="5dp"/>
+
+        <RadioButton
+            android:id="@+id/radioButton4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/d_number"
+            app:layout_constraintStart_toStartOf="@id/logo_img"
+            app:layout_constraintTop_toBottomOf="@id/radioButton3"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppin_regular"
+            android:textColor="@color/black"
+            android:layout_marginTop="5dp"/>
+
+    </RadioGroup>
+    <Button
+        android:id="@+id/nextQuestionBtn"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="22dp"
+        android:background="@drawable/btn"
+        android:padding="16dp"
+        android:text="Next Question"
+        android:textColor="#ffff"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
