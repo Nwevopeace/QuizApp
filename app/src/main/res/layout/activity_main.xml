@@ -12,7 +12,7 @@
         android:id="@+id/welcome_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="80dp"
         android:fontFamily="@font/poppin_bold"
         android:text="Welcome to"
         android:layout_marginStart="60dp"
@@ -30,7 +30,7 @@
         android:src="@drawable/logo_black"
         app:layout_constraintStart_toEndOf="@id/welcome_text"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="70dp"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteY="44dp" />
 
@@ -46,23 +46,6 @@
         android:layout_marginTop="50dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/welcome_text"/>
-
-    <!--    <com.google.android.material.textfield.TextInputLayout-->
-    <!--        android:id="@+id/input_layout"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:hint="Enter Name"-->
-    <!--        android:layout_marginTop="40dp"-->
-    <!--        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"-->
-    <!--        app:layout_constraintTop_toBottomOf="@id/instruction"-->
-    <!--        app:layout_constraintStart_toStartOf="@id/instruction"-->
-    <!--        app:layout_constraintBottom_toTopOf="@id/quizBtn">-->
-
-    <!--        <com.google.android.material.textfield.TextInputEditText-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="wrap_content"/>-->
-
-    <!--    </com.google.android.material.textfield.TextInputLayout>-->
 
     <Button
         android:id="@+id/quizBtn"
