@@ -31,10 +31,10 @@ class ResultActivity : AppCompatActivity() {
             tvwrong.text = "Wrong: $wrong"
             tvSkip.text = "Skip: $skip"
             if (totalScore >= 6) {
-                activityResultBinding.emojiReactionImg.setImageResource(R.drawable.smile)
+                activityResultBinding.emojiReactionImg.setImageResource(R.drawable.baseline_emoji_events_24)
                 Toast.makeText(this@ResultActivity, "Wow Great", Toast.LENGTH_SHORT).show()
             } else {
-                emojiReactionImg.setImageResource(R.drawable.smile)
+                emojiReactionImg.setImageResource(R.drawable.baseline_emoji_events_24)
                 Toast.makeText(this@ResultActivity, "Need Improvement", Toast.LENGTH_SHORT).show()
             }
             tvPlayAgain.setOnClickListener {
