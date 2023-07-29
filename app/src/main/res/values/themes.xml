@@ -14,6 +14,4 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="Theme.QuizAppSplashScreen." parent="Base.Theme.QuizApp"/>
-
 </resources>
