@@ -13,12 +13,12 @@ import android.widget.RadioButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import com.peacecodes.quizapp.databinding.ActivityPlayBinding
+import com.peacecodes.quizapp.databinding.ActivityQuestionBinding
 import java.util.*
 import java.util.concurrent.TimeUnit
 
-class PlayActivity : AppCompatActivity() {
-    private lateinit var activityPlayBinding: ActivityPlayBinding
+class QuestionActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityQuestionBinding
     //    timer
     private var countDownTimer: CountDownTimer? = null
     private val countDownInMilliSecond: Long = 30000
@@ -57,27 +57,27 @@ class PlayActivity : AppCompatActivity() {
         "Kotlin")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        activityPlayBinding = ActivityPlayBinding.inflate(layoutInflater)
-        setContentView(activityPlayBinding.root)
+        binding = ActivityQuestionBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         initViews()
     }
     @SuppressLint("SetTextI18n")
     private fun showNextQuestion() {
         checkAnswer()
-        activityPlayBinding.apply {
+        binding.apply {
             if (updateQueNo < 3) {
                 tvNoOfQues.text = "${updateQueNo + 1}/3"
                 updateQueNo++
             }
             if (qIndex <= questions.size - 1) {
                 tvQuestion.text = questions[qIndex]
-                radioButton1.text = options[qIndex * 4] // 2*4=8
-                radioButton2.text = options[qIndex * 4 + 1] //  2*4+1=9
-                radioButton3.text = options[qIndex * 4 + 2] //  2*4+2=10
-                radioButton4.text = options[qIndex * 4 + 3] //  2*4+3=11
+                radioButton1.text = options[qIndex * 4]
+                radioButton2.text = options[qIndex * 4 + 1]
+                radioButton3.text = options[qIndex * 4 + 2]
+                radioButton4.text = options[qIndex * 4 + 3]
             } else {
                 score = correct
-                val intent = Intent(this@PlayActivity, ResultActivity::class.java)
+                val intent = Intent(this@QuestionActivity, ResultActivity::class.java)
                 intent.putExtra("correct", correct)
                 intent.putExtra("wrong", wrong)
                 intent.putExtra("skip", skip)
@@ -89,7 +89,7 @@ class PlayActivity : AppCompatActivity() {
     }
     @SuppressLint("SetTextI18n")
     private fun checkAnswer() {
-        activityPlayBinding.apply {
+        binding.apply {
             if (radiogrp.checkedRadioButtonId == -1) {
                 skip++
                 timeOverAlertDialog()
@@ -113,7 +113,7 @@ class PlayActivity : AppCompatActivity() {
     }
     @SuppressLint("SetTextI18n")
     private fun initViews() {
-        activityPlayBinding.apply {
+        binding.apply {
             tvQuestion.text = questions[qIndex]
             radioButton1.text = options[0]
             radioButton2.text = options[1]
@@ -123,7 +123,7 @@ class PlayActivity : AppCompatActivity() {
             // if selected then selected option correct or wrong
             nextQuestionBtn.setOnClickListener {
                 if (radiogrp.checkedRadioButtonId == -1) {
-                    Toast.makeText(this@PlayActivity,
+                    Toast.makeText(this@QuestionActivity,
                         "Please select an options",
                         Toast.LENGTH_SHORT)
                         .show()
@@ -141,7 +141,7 @@ class PlayActivity : AppCompatActivity() {
     private fun statCountDownTimer() {
         countDownTimer = object : CountDownTimer(timeLeftMilliSeconds, countDownInterval) {
             override fun onTick(millisUntilFinished: Long) {
-                activityPlayBinding.apply {
+                binding.apply {
                     timeLeftMilliSeconds = millisUntilFinished
                     val second = TimeUnit.MILLISECONDS.toSeconds(timeLeftMilliSeconds).toInt()
                     // %02d format the integer with 2 digit
@@ -161,8 +161,8 @@ class PlayActivity : AppCompatActivity() {
     }
     @SuppressLint("SetTextI18n")
     private fun correctAlertDialog() {
-        val builder = AlertDialog.Builder(this@PlayActivity)
-        val view = LayoutInflater.from(this@PlayActivity).inflate(R.layout.correct_dialog, null)
+        val builder = AlertDialog.Builder(this@QuestionActivity)
+        val view = LayoutInflater.from(this@QuestionActivity).inflate(R.layout.correct_dialog, null)
         builder.setView(view)
         val tvScore = view.findViewById<TextView>(R.id.tvDialog_score)
         val correctOkBtn = view.findViewById<Button>(R.id.correct_ok)
@@ -177,8 +177,8 @@ class PlayActivity : AppCompatActivity() {
     }
     @SuppressLint("SetTextI18n")
     private fun wrongAlertDialog() {
-        val builder = AlertDialog.Builder(this@PlayActivity)
-        val view = LayoutInflater.from(this@PlayActivity).inflate(R.layout.wrong_dialog, null)
+        val builder = AlertDialog.Builder(this@QuestionActivity)
+        val view = LayoutInflater.from(this@QuestionActivity).inflate(R.layout.wrong_dialog, null)
         builder.setView(view)
         val tvWrongDialogCorrectAns = view.findViewById<TextView>(R.id.tv_wrongDialog_correctAns)
         val wrongOk = view.findViewById<Button>(R.id.wrong_ok)
@@ -194,8 +194,8 @@ class PlayActivity : AppCompatActivity() {
     }
     @SuppressLint("SetTextI18n")
     private fun timeOverAlertDialog() {
-        val builder = AlertDialog.Builder(this@PlayActivity)
-        val view = LayoutInflater.from(this@PlayActivity).inflate(R.layout.time_over_dialog, null)
+        val builder = AlertDialog.Builder(this@QuestionActivity)
+        val view = LayoutInflater.from(this@QuestionActivity).inflate(R.layout.time_over_dialog, null)
         builder.setView(view)
         val timeOverOk = view.findViewById<Button>(R.id.timeOver_ok)
         val alertDialog = builder.create()

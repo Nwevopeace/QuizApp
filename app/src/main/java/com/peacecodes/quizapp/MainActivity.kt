@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         Binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(Binding.root)
         Binding.quizBtn.setOnClickListener {
-            val intent = Intent(this@MainActivity, PlayActivity::class.java)
+            val intent = Intent(this@MainActivity, QuestionActivity::class.java)
             startActivity(intent)
         }
     }
